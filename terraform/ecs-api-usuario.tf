@@ -11,8 +11,8 @@ resource "aws_ecs_task_definition" "usuario" {
       image     = "vilacaro/api:latest"
       essential = true
       portMappings = [{
-        containerPort = 5004
-        hostPort      = 5004
+        containerPort = 9000
+        hostPort      = 9000
       }]
     }
   ])

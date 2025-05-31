@@ -11,8 +11,8 @@ resource "aws_ecs_task_definition" "pedido" {
       image     = "vilacaro/pedido:latest"
       essential = true
       portMappings = [{
-        containerPort = 5001
-        hostPort      = 5001
+        containerPort = 8080
+        hostPort      = 8080
       }]
     }
   ])

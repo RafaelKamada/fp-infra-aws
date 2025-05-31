@@ -11,8 +11,8 @@ resource "aws_ecs_task_definition" "pagamento" {
       image     = "diegogl12/food-order-pagamento:latest"
       essential = true
       portMappings = [{
-        containerPort = 5002
-        hostPort      = 5002
+        containerPort = 4000
+        hostPort      = 4000
       }]
     }
   ])

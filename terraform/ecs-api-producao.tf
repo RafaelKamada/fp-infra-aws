@@ -11,8 +11,8 @@ resource "aws_ecs_task_definition" "producao" {
       image     = "diegogl12/food-order-producao:latest"
       essential = true
       portMappings = [{
-        containerPort = 5003
-        hostPort      = 5003
+        containerPort = 4002
+        hostPort      = 4002
       }]
     }
   ])

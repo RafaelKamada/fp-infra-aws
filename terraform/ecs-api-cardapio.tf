@@ -12,7 +12,7 @@ resource "aws_ecs_task_definition" "cardapio" {
       essential = true
       portMappings = [{
         containerPort = 8080
-        hostPort      = 4003
+        hostPort      = 8080
       }]
     }
   ])
