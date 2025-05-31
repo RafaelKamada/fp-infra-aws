@@ -11,8 +11,8 @@ resource "aws_ecs_task_definition" "cardapio" {
       image     = "japamanoel/foodorder_cardapio:latest"
       essential = true
       portMappings = [{
-        containerPort = 5000
-        hostPort      = 5000
+        containerPort = 8080
+        hostPort      = 4003
       }]
     }
   ])
