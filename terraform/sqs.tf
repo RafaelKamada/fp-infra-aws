@@ -1,7 +1,7 @@
-resource "aws_sqs_queue" "pedido_para_producao" {
-  name = "pedido-para-producao"
+resource "aws_sqs_queue" "pedidos_producao" {
+  name = "${var.project_name}-pedidos-producao-queue"
 }
 
-resource "aws_sqs_queue" "pedido_para_pagamento" {
-  name = "pedido-para-pagamento"
+resource "aws_sqs_queue" "pedidos_pagamento" {
+  name = "${var.project_name}-pedidos-pagamento-queue"
 }

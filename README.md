@@ -1,22 +1,18 @@
+# FoodOrder AWS Terraform Deployment
 
-# Infraestrutura Completa - FoodOrder
+## Requisitos
+- Terraform CLI >= 1.3.0
+- AWS CLI configurado para acessar sua conta com a role LabRole (padrão AWS Academy)
 
-Este projeto contém os arquivos Terraform para subir toda a infraestrutura do FoodOrder na AWS utilizando ECS Fargate.
+## Variáveis configuráveis
+- aws_region (default: us-east-1)
+- lab_role_arn (default: arn:aws:iam::618817506326:role/LabRole)
+- project_name (default: foodorder)
 
-## Serviços Incluídos:
-- Pedido
-- Pagamento
-- Produção
-- Cardápio
-- Usuários
-- Mock Server
-- MongoDB (Fargate)
-- PostgreSQL (Fargate)
-- 2 filas SQS
+## Como usar
 
-## Passos para Deploy:
-1. Configure suas credenciais AWS (`LabRole`).
-2. Execute:
-   terraform init
-   terraform apply
+1. Clone este repositório.
 
+2. Inicialize o Terraform:
+```bash
+terraform init
