@@ -1,18 +1,22 @@
-# FoodOrder AWS Terraform Deployment
+# 🚀 Infraestrutura Food Order com Terraform
 
-## Requisitos
-- Terraform CLI >= 1.3.0
-- AWS CLI configurado para acessar sua conta com a role LabRole (padrão AWS Academy)
+## ✅ Serviços
 
-## Variáveis configuráveis
-- aws_region (default: us-east-1)
-- lab_role_arn (default: arn:aws:iam::618817506326:role/LabRole)
-- project_name (default: foodorder)
+- MongoDB (Fargate)
+- PostgreSQL (Fargate)
+- API Usuário (`vilacaro/api`)
+- API Cardápio (`japamanoel/foodorder_cardapio`)
+- API Pedido (`vilacaro/pedido`)
+- API Pagamento (`diegogl12/food-order-pagamento`)
+- API Produção (`diegogl12/food-order-producao`)
+- 2 Filas SQS
 
-## Como usar
+## 🔧 Como usar
 
-1. Clone este repositório.
+1. Configure suas credenciais AWS (Terraform Cloud, AWS CLI ou env vars).
+2. Execute:
 
-2. Inicialize o Terraform:
 ```bash
 terraform init
+terraform plan
+terraform apply

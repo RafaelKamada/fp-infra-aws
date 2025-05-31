@@ -1,27 +1,27 @@
-resource "aws_ecs_task_definition" "mongo" {
-  family                   = "mongo-task"
+resource "aws_ecs_task_definition" "cardapio" {
+  family                   = "cardapio-task"
   network_mode             = "awsvpc"
   requires_compatibilities = ["FARGATE"]
-  cpu                      = "512"
-  memory                   = "1024"
+  cpu                      = "256"
+  memory                   = "512"
 
   container_definitions = jsonencode([
     {
-      name      = "mongo"
-      image     = "mongo:latest"
+      name      = "cardapio"
+      image     = "japamanoel/foodorder_cardapio:latest"
       essential = true
       portMappings = [{
-        containerPort = 27017
-        hostPort      = 27017
+        containerPort = 5000
+        hostPort      = 5000
       }]
     }
   ])
 }
 
-resource "aws_ecs_service" "mongo" {
-  name            = "mongo"
+resource "aws_ecs_service" "cardapio" {
+  name            = "cardapio"
   cluster         = aws_ecs_cluster.main.id
-  task_definition = aws_ecs_task_definition.mongo.arn
+  task_definition = aws_ecs_task_definition.cardapio.arn
   desired_count   = 1
   launch_type     = "FARGATE"
 
